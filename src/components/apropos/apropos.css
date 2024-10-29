@@ -1,0 +1,90 @@
+.apropos__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.apropos__img {
+    width: 400px;
+    border-radius: 1.5rem;
+    justify-self: center;
+}
+
+.apropos__info {
+    grid-template-columns: repeat(2, 140px);
+    gap: 0.5rem;
+    margin-bottom: var(--mb-2);
+}
+
+.apropos__box {
+    background-color: var(--container-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    text-align: center;
+    padding: 1rem 1.25rem;
+}
+
+.apropos__icon {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-5);
+}
+
+.apropos__title {
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+}
+
+.apropos__subtitle {
+    font-size: var(--tiny-font-size);
+}
+
+.apropos__description {
+    padding: 0 2rem 0 0;
+    margin-bottom: var(--mb-2-5);
+}
+
+
+@media screen and (max-width: 992px) {
+    .apropos__container {
+        grid-template-columns: 1fr;
+        row-gap: 2.5rem;
+    }
+
+    .apropos__img {
+        width: 300px;
+    }
+
+    .apropos__box {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .apropos__data {
+        text-align: center;
+    }
+
+    .apropos__info {
+        justify-content: center;
+    }
+
+    .apropos__description {
+        padding: 0 5rem;
+        margin-bottom: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .apropos__info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about__description {
+        padding: 0;
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .apropos__info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
