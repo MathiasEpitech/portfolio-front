@@ -31,16 +31,15 @@ const AddProjet = ({ categories }) => {
         const updatedImages = [...images];
 
         newFiles.forEach((file) => {
-            // Vérifier si le fichier est déjà dans le tableau images
             if (!updatedImages.some((img) => img.name === file.name)) {
-                console.log(`Ajout de l'image: ${file.name}`); // Log pour suivi
+                console.log(`Ajout de l'image: ${file.name}`);
                 updatedImages.push(file);
             } else {
-                console.log(`Image déjà présente: ${file.name}`); // Log pour suivi
+                console.log(`Image déjà présente: ${file.name}`);
             }
         });
 
-        console.log("Images après ajout:", updatedImages); // Log pour suivi
+        console.log("Images après ajout:", updatedImages);
         setImages(updatedImages);
     };
 
@@ -66,7 +65,7 @@ const AddProjet = ({ categories }) => {
         formData.append('technologies', technologies);
 
         images.forEach(image => {
-            console.log(`Ajout de l'image au FormData: ${image.name}`); // Log pour suivi
+            console.log(`Ajout de l'image au FormData: ${image.name}`);
             formData.append('images', image);
         });
         formData.append('link', link);
@@ -82,7 +81,7 @@ const AddProjet = ({ categories }) => {
 
             if (response.ok) {
                 setSuccessMessage("Projet ajouté avec succès !");
-                // Réinitialiser les champs du formulaire
+
                 setTitle("");
                 setDescription("");
                 setImages([]);

@@ -26,14 +26,14 @@ const AddCategory = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`, // Envoyer le token JWT
+                    'Authorization': `Bearer ${token}`, 
                 },
-                body: JSON.stringify({ name }), // Envoyer la nouvelle catégorie
+                body: JSON.stringify({ name }),
             });
 
             if (response.ok) {
                 setSuccessMessage("Catégorie ajoutée avec succès !");
-                setName(""); // Réinitialiser le champ du nom
+                setName("");
                 window.location.reload();
             } else {
                 const errorData = await response.json();

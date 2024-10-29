@@ -15,7 +15,6 @@ const Header = () => {
   const [activeNav, setActiveNav] = useState('#accueil');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Vérifier si l'utilisateur est connecté en vérifiant le JWT
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -94,7 +93,6 @@ const Header = () => {
               </a>
             </li>
 
-            {/* Afficher Déconnexion si l'utilisateur est connecté, sinon afficher Connexion */}
             {isLoggedIn ? (
               <Logout />
             ) : (

@@ -4,7 +4,7 @@ const Logout = () => {
   
   const handleLogout = async () => {
     try {
-      // Optionnel : vous pouvez envoyer une requête au back-end pour la déconnexion
+   
       const response = await fetch('https://app-morning-leaf-2821.fly.dev/api/auth/logout', {
         method: 'POST',
         headers: {
@@ -13,9 +13,9 @@ const Logout = () => {
       });
 
       if (response.ok) {
-        // Suppression du token du localStorage
+
         localStorage.removeItem('token');
-        window.location.reload(); // Rafraîchissement pour mettre à jour l'état de connexion
+        window.location.reload();
       } else {
         console.error('Erreur lors de la déconnexion');
       }

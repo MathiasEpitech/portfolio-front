@@ -3,7 +3,6 @@ import React, { useState, useRef } from "react";
 const PutProjet = ({ projet, categories }) => {
     const form = useRef();
 
-    // États locaux pour les valeurs du formulaire
     const [title, setTitle] = useState(projet.title);
     const [description, setDescription] = useState(projet.description);
     const [link, setLink] = useState(projet.link);
@@ -15,12 +14,10 @@ const PutProjet = ({ projet, categories }) => {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
 
-    // Gérer l'affichage du formulaire
     const toggleTab = (index) => {
         setToggleState(index);
     };
 
-    // Gestion des catégories
     const handleCategoryChange = (categoryId) => {
         if (selectedCategories.includes(categoryId)) {
             setSelectedCategories(selectedCategories.filter(id => id !== categoryId));
@@ -29,12 +26,10 @@ const PutProjet = ({ projet, categories }) => {
         }
     };
 
-    // Gestion des images sélectionnées
     const handleImageChange = (e) => {
         setImages([...e.target.files]);
     };
 
-    // Fonction de soumission du formulaire
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
@@ -44,7 +39,7 @@ const PutProjet = ({ projet, categories }) => {
             return;
         }
 
-        setIsSubmitted(true); // Affiche le message de soumission en cours
+        setIsSubmitted(true);
 
         const formData = new FormData();
         formData.append('title', title);
@@ -65,16 +60,16 @@ const PutProjet = ({ projet, categories }) => {
 
             if (response.ok) {
                 setSuccessMessage("Projet modifié avec succès !");
-                setIsSubmitted(false); // Réinitialise l'état après succès
-                window.location.reload(); // Recharger la page après la modification
+                setIsSubmitted(false);
+                window.location.reload();
             } else {
                 const errorData = await response.json();
                 setErrorMessage(errorData.message || "Erreur lors de la modification du projet.");
-                setIsSubmitted(false); // Réinitialise l'état en cas d'erreur
+                setIsSubmitted(false);
             }
         } catch (error) {
             setErrorMessage("Erreur lors de la modification du projet.");
-            setIsSubmitted(false); // Réinitialise l'état en cas d'erreur
+            setIsSubmitted(false);
         }
     };
 

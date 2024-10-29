@@ -5,7 +5,7 @@ import Accueil from './components/accueil/Accueil.jsx';
 import Apropos from './components/apropos/Apropos.jsx';
 import Skills from './components/skills/Skills.jsx';
 import Qualification from './components/qualification/Qualification.jsx';
-import Projet from './components/projetsBack/Projet.jsx';
+import Projet from './components/projets/Projet.jsx';
 import Contact from './components/contact/Contact.jsx';
 import Footer from './components/footer/Footer.jsx';
 import ScrollUp from './components/scrollup/ScrollUp.jsx';

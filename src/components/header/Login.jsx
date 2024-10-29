@@ -30,15 +30,13 @@ const Login = () => {
             const data = await response.json();
 
             if (response.ok) {
-                // Stocker le token dans le localStorage
+
                 localStorage.setItem('token', data.token);
 
                 window.location.reload();
 
-                // Fermer le modal après la connexion
                 setToggleState(0);
             } else {
-                // Gérer les erreurs
                 setErrorMessage(data.message || "Erreur de connexion");
             }
         } catch (error) {
